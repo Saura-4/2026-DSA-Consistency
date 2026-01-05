@@ -5,15 +5,16 @@ using namespace std;
 int minBitFlips(int start, int goal) 
 {
 
-        int number = start^goal;
-        int cnt=0;
-        while(number){
-            number = number & (number-1);
-            cnt++;
-        }
-        return cnt;
+        int m=start^goal;
+        int count=0;
+        while (m>0)
+                {
+                   if((m&1)==1)count++;     
+                        m=m>>1;
+                }
+        return count;
         
-    };
+};
 int main()
 {
 int start=10;
